@@ -1,3 +1,5 @@
+// Copyright (c) 2008 Jonathan Bowman
+// MIT License <http://opensource.org/licenses/mit-license.php>
 function SimpleModal(content, fleeting) {
 	SimpleModal.close();
 	SimpleModal.instance = this;

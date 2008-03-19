@@ -1,5 +1,6 @@
 // ToolTip class
-// Jonathan Bowman, 2008
+// Copyright (c) 2008 Jonathan Bowman
+// MIT License <http://opensource.org/licenses/mit-license.php>
 // Usage: If you want a tooltip to show for a certain element,
 //        set the "title" attribute to the text of the tooltip,
 //        and make sure any child img tags with "alt" set also
