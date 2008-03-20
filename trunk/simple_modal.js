@@ -1,8 +1,10 @@
 // Copyright (c) 2008 Jonathan Bowman
-// MIT License <http://opensource.org/licenses/mit-license.php>
+// MIT-style License <http://opensource.org/licenses/mit-license.php>
+//
+// Usage: SimpleModal.open("The text or HTML to show in the 'window'");
+
 function SimpleModal(content, fleeting) {
 	SimpleModal.close();
-	SimpleModal.instance = this;
 	if (!(SimpleModal.overlay = document.getElementById('simple_modal_overlay'))) {
 		SimpleModal.overlay = document.createElement('div');
 		SimpleModal.overlay.id = 'simple_modal_overlay';
@@ -41,11 +43,11 @@ function SimpleModal(content, fleeting) {
 	SimpleModal.oldscroll = window.onscroll;
 	if (SimpleModal.centerdiv.style.position === 'absolute') {
 		if (typeof window.onscroll !== 'function') {
-			window.onscroll = SimpleModal.instance.position;
+			window.onscroll = this.position;
 		} else {
 			window.onscroll = function () {
 				SimpleModal.oldscroll();
-				SimpleModal.instance.position();
+				this.position();
 			};
 		}
 	}
@@ -55,8 +57,7 @@ function SimpleModal(content, fleeting) {
 	SimpleModal.centerdiv.style.visibility = 'visible';
 	SimpleModal.box.style.visibility = 'visible';
 }
-SimpleModal.msie = navigator.userAgent.match('MSIE([^;]+)');
-SimpleModal.oldie = (SimpleModal.msie ? (parseFloat(SimpleModal.msie[1]) < 7) : false);
+SimpleModal.oldie = (/*@cc_on!@*/false ? (parseFloat(navigator.userAgent.match('MSIE([^;]+)')[1]) < 7) : false);
 SimpleModal.prototype = {
 	close: function () {
 		SimpleModal.centerdiv.style.display = 'none';
@@ -78,8 +79,8 @@ SimpleModal.prototype = {
 	}
 };
 SimpleModal.open = function (content) {	
-	var modal_instance = new SimpleModal(content);
-	return modal_instance;
+	SimpleModal.instance = new SimpleModal(content);
+	return SimpleModal.instance;
 };
 SimpleModal.close = function () {
 	if (SimpleModal.instance) {

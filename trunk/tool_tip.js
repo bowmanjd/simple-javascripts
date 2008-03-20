@@ -1,17 +1,16 @@
 // ToolTip class
 // Copyright (c) 2008 Jonathan Bowman
-// MIT License <http://opensource.org/licenses/mit-license.php>
+// MIT-style License <http://opensource.org/licenses/mit-license.php>
+//
 // Usage: If you want a tooltip to show for a certain element,
 //        set the "title" attribute to the text of the tooltip,
 //        and make sure any child img tags with "alt" set also
 //        have "title" blank (so the alt text does not interfere.) 
 
-// change the following to the class of the elements you want "tooltipped,"
-// or leave blank to have all elements with title attributes "tooltipped."
-//ToolTip.className = 'widget'; 
+//ToolTip.className = 'widget'; // the class of element that triggers tooltips;
+                                // leave blank to enable all titled elements
 
 function ToolTip() {
-    ToolTip.instance = this;
     if (!document.getElementById('tool_tip_box')) {
         this.box = document.createElement('div');
         this.box.id = 'tool_tip_box';
@@ -59,8 +58,6 @@ ToolTip.init = function () {
 ToolTip.load = function () {
     ToolTip.instance = new ToolTip();
 };
-ToolTip.msie = navigator.userAgent.match('MSIE([^;]+)');
-ToolTip.oldie = (ToolTip.msie ? (parseFloat(ToolTip.msie[1]) < 7) : false);
 ToolTip.prototype = {
     find_trigger: function () {
         if (!this.trigger) {
@@ -69,8 +66,14 @@ ToolTip.prototype = {
                 el = (this.evt.target) ? this.evt.target : ((this.evt.srcElement) ? this.evt.srcElement : null);
             }
             var classes;
+            try {
+              (el.nodeType === 1);
+            }
+            catch (e) {
+              return false;
+            }
             find_trigger:
-            while (el !== document.body && !this.trigger) {
+            while (el && el !== document.body && !this.trigger) {
                 if (!ToolTip.className && el.title && el.title !== '') {
                     this.trigger = el;
                     break;
@@ -83,7 +86,11 @@ ToolTip.prototype = {
                         }
                     }
                 }
-                el = el.parentNode;
+                var mom = el.parentNode;
+                while (mom.nodeType && mom.nodeType !== 1) {
+                  mom = mom.parentNode;
+                }
+                el = mom;
             }
         }
         return this.trigger;
@@ -101,12 +108,6 @@ ToolTip.prototype = {
         }
     },
     show: function () {
-        if (ToolTip.oldie) {
-            this.hidden_selects = document.getElementsByTagName('select');
-            for (var i = 0; i < this.hidden_selects.length; i++) {
-                this.hidden_selects[i].style.visibility = 'hidden';
-            }
-        }
         if (!this.trigger && this.find_trigger()) {
             this.box.style.top = (document.documentElement.scrollTop + this.evt.clientY + 10).toString() + 'px'; 
             this.box.style.left = (document.documentElement.scrollLeft + this.evt.clientX + 10).toString() + 'px'; 
