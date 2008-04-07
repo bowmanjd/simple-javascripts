@@ -89,6 +89,7 @@ Simple.Modal = {
         Simple.Modal.overlay.style.height = (document.documentElement.clientHeight > document.body.offsetHeight ? document.documentElement.clientHeight : document.body.offsetHeight) + 'px';
     }
 };
+
 Simple.add_event(window, 'load', function () {
     Simple.Modal.setup();
 });

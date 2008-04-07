@@ -7,8 +7,8 @@
 //        and make sure any child img tags with "alt" set also
 //        have "title" blank (so the alt text does not interfere.) 
 
-//Simple.Tooltip.className = 'widget'; // the class of element that triggers tooltips;
-                                // leave blank to enable all titled elements
+//Simple.Tooltip.className = 'tooltip'; // the class of element that triggers tooltips;
+                                        // leave blank to enable all titled elements
 
 var Simple;
 if (!Simple) {
@@ -94,6 +94,7 @@ Simple.Tooltip = {
         }
     }
 };
+
 Simple.add_event(window, 'load', function () {
     Simple.Tooltip.setup();
 });
