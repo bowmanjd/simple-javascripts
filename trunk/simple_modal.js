@@ -1,4 +1,4 @@
-// SimpleModal JavaScript Library
+// SimpleModal JavaScript Library v0.7
 // http://simple-javascripts.googlecode.com
 // Copyright (c) 2008 Jonathan Bowman
 // MIT-style License <http://opensource.org/licenses/mit-license.php>
@@ -11,8 +11,12 @@ var SimpleModal = {
                 this.hidden_selects = document.getElementsByTagName('select');
                 visibility = 'hidden';
                 this.add_event(window, 'scroll', this.position);
-                this.add_event(window, 'resize', this.position);
+                this.add_event(window, 'resize', function () {
+                    SimpleModal.position();
+                    SimpleModal.stretch();
+                });
                 this.position();
+                this.stretch();
             } else {
                 visibility = 'visible';
                 window.onscroll = this.oldscroll || null;
@@ -73,9 +77,11 @@ var SimpleModal = {
         }
         if (this.oldie) {
             this.overlay.style.position = 'absolute';
-            this.overlay.style.height = (document.documentElement.clientHeight > document.body.offsetHeight ? document.documentElement.clientHeight : document.body.offsetHeight) + 'px';
             this.center.style.position = 'absolute';
         }
+    },
+    stretch: function () {
+        SimpleModal.overlay.style.height = (document.documentElement.clientHeight > document.body.offsetHeight ? document.documentElement.clientHeight : document.body.offsetHeight) + 'px';
     }
 };
 SimpleModal.add_event(window, 'load', function () {
