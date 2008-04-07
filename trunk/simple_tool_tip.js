@@ -1,5 +1,5 @@
 // ToolTip class
-// Copyright (c) 2008 Jonathan Bowman
+// Copyright (c) 2008 Jonathan Bowman and Eastern Mennonite University
 // MIT-style License <http://opensource.org/licenses/mit-license.php>
 //
 // Usage: If you want a tooltip to show for a certain element,
