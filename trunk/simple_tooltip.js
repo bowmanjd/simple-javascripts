@@ -1,14 +1,6 @@
 // Simple.Tooltip class
 // Copyright (c) 2008 Jonathan Bowman and Eastern Mennonite University
 // MIT-style License <http://opensource.org/licenses/mit-license.php>
-//
-// Usage: If you want a tooltip to show for a certain element,
-//        set the "title" attribute to the text of the tooltip,
-//        and make sure any child img tags with "alt" set also
-//        have "title" blank (so the alt text does not interfere.) 
-
-//Simple.Tooltip.className = 'tooltip'; // the class of element that triggers tooltips;
-                                        // leave blank to enable all titled elements
 
 var Simple;
 if (!Simple) {
@@ -28,6 +20,7 @@ if (!Simple) {
     };
 }
 Simple.Tooltip = {
+    className: 'tooltip', // leave blank to enable all titled elements
     hide: function () {
         if (this.trigger) {
             this.box.style.display = 'none';
@@ -36,9 +29,9 @@ Simple.Tooltip = {
         }
     },
     setup: function () {
-        if (!document.getElementById('tool_tip_box')) {
+        if (!document.getElementById('simple_tooltip_box')) {
             this.box = document.createElement('div');
-            this.box.id = 'tool_tip_box';
+            this.box.id = 'simple_tooltip_box';
             this.box.style.position = 'absolute';
             this.box.style.display = 'none';
             document.body.appendChild(this.box);
