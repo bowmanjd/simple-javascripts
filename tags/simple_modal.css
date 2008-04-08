@@ -1,0 +1,28 @@
+#simple_modal_box {  
+    background-color: white;  
+    border:3px solid gray;  
+    left: 50%;
+    padding: 10px; 
+    position: absolute;
+    text-align: left;
+} 
+#simple_modal_overlay {  
+    background-color: black;
+    filter: alpha(opacity=30); /* for IE */
+    height: 100%;
+    left: 0px;
+    opacity: 0.3;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 9998;
+}  
+#simple_modal_center {
+    left: 0px;
+    overflow: visible;
+    position: fixed;
+    top: 50%;
+    visibility: hidden;
+    width: 100%;
+    z-index: 9999;
+}
