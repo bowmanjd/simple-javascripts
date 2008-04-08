@@ -1,4 +1,4 @@
-// Simple.Modal JavaScript Library
+// Simple.Modal JavaScript Library, v0.7.1
 // http://simple-javascripts.googlecode.com
 // Copyright (c) 2008 Jonathan Bowman and Eastern Mennonite University
 // MIT-style License <http://opensource.org/licenses/mit-license.php>
