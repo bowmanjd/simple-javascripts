@@ -1,0 +1,13 @@
+#summary Other JavaScript libraries.
+
+= Alternatives =
+
+Simple-!JavaScripts is a very minimalist set of only a few tools. Other, much larger, libraries exist, known for their flexibility and convenience. If you need something more than what Simple-!JavaScripts has to offer, I recommend one of the following:
+
+  * [http://prototypjs.org Prototype]
+  * [http://jquery.com jQuery]
+  * [http://mootools.net MooTools]
+
+MooTools includes a nice tooltip library. Other tooltip libraries exist for the other frameworks, but I have not tried them.
+
+[http://jquery.com jQuery] has a simple and flexible modal box called [http://jquery.com/demo/thickbox/ ThickBox], and [http://livepipe.net/projects/control_modal Control.Modal] is a powerful one for [http://prototypjs.org Prototype] (and [http://script.aculo.us script.aculo.us]).
