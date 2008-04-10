@@ -1,7 +1,5 @@
 #summary Other JavaScript libraries.
 
-= Alternatives =
-
 Simple-!JavaScripts is a very minimalist set of only a few tools. Other, much larger, libraries exist, known for their flexibility and convenience. If you need something more than what Simple-!JavaScripts has to offer, I recommend one of the following:
 
   * [http://prototypjs.org Prototype]
