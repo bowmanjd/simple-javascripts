@@ -28,7 +28,7 @@ Simple.Modal.close();
 Simple.ToolTip USAGE
 --------------------
 
-Find the following line in simple.js (around line 90):
+Find the following line in simple.js (around line 93):
 
     className: 'tooltip', // leave blank to enable all titled elements
 
