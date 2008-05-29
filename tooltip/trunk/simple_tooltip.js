@@ -47,7 +47,7 @@ Simple.Tooltip = {
         var classes;
         var evnt = (evt) ? evt : ((event) ? event : null);
         if (evnt) {
-            var el = (evnt.target) ? evnt.target : ((evnt.srcElement) ? evnt.srcElement : null);
+            var el = evnt.target ? evnt.target : (evnt.srcElement ? evnt.srcElement : null);
             if (!this.trigger) {
                 try {
                     (el.nodeType === 1);
@@ -61,7 +61,7 @@ Simple.Tooltip = {
                         this.trigger = el;
                         break;
                     } else {
-                        classes = (el.className) ? el.className.split(' ') : [];
+                        classes = el.className ? el.className.split(' ') : [];
                         for (var i = 0; i < classes.length; i++) {
                             if (classes[i] === this.className && el.title) {
                                 this.trigger = el;
