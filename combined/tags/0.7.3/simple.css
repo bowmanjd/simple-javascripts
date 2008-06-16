@@ -1,0 +1,40 @@
+#simple_modal_box {  
+    background-color: white;  
+    border:3px solid gray;  
+    padding: 10px; 
+    text-align: left;
+    /* Warning: avoid editing the following: */
+    left: 50%;
+    position: absolute;
+} 
+#simple_modal_overlay {  
+    /* Avoid deleting the following, but
+     * the color and opacity can be changed
+     * according to your preference. */
+    background-color: black;
+    filter: alpha(opacity=30); /* for IE */
+    opacity: 0.3;
+    /* warning: avoid editing the following: */
+    height: 100%;
+    left: 0px;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 9998;
+}  
+#simple_modal_center {
+    /* warning: avoid editing the following: */
+    left: 0px;
+    overflow: visible;
+    position: fixed;
+    top: 50%;
+    visibility: hidden;
+    width: 100%;
+    z-index: 9999;
+}
+#simple_tooltip_box {
+    background-color:#FFFFEE;
+    border:1px solid gray;
+    padding:3px;
+}
+
