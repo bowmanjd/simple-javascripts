@@ -1,4 +1,4 @@
-// Simple JavaScript Libraries v0.7.3
+// Simple JavaScript Libraries v0.7.4
 // http://simple-javascripts.googlecode.com
 // Copyright (c) 2008 Jonathan Bowman and Eastern Mennonite University
 // MIT-style License <http://opensource.org/licenses/mit-license.php>
@@ -6,9 +6,9 @@
 var Simple = {
     add_event: function (obj, evt, func) {
         if (typeof obj['on' + evt] === 'function') {
-            this['old' + evt] = obj['on' + evt];
+            var oldEvent = obj['on' + evt];
             obj['on' + evt] = function (evnt) {
-                Simple['old' + evt](evnt);
+                oldEvent(evnt);
                 func(evnt);
             };
         } else {
