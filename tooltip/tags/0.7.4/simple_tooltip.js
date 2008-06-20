@@ -1,4 +1,4 @@
-// Simple.Tooltip class
+// Simple.Tooltip JavaScript Library v0.7.4
 // Copyright (c) 2008 Jonathan Bowman and Eastern Mennonite University
 // MIT-style License <http://opensource.org/licenses/mit-license.php>
 
