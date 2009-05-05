@@ -1,9 +1,0 @@
-**0.7.1
--------
-
-First public release
-
-**0.7.4
--------
-
-Fixed recursive bug in Simple.add_event

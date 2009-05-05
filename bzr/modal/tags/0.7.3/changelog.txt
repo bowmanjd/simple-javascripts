@@ -1,9 +1,0 @@
-**0.7.1
--------
-
-First public release
-
-**0.7.3
--------
-
-Allowed Simple.Modal.open to take a string or an element
