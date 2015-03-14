@@ -1,0 +1,1 @@
+Modal boxes, tool tips, etc... Many existing libraries for simple tasks depend on bloated [JavaScript frameworks](Alternatives.md). In contrast, each of these libraries can be used standalone, without any other dependencies.
